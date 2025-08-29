@@ -1,0 +1,23 @@
+stage: pt
+model_name_or_path: "models/Llama-3.2-1B"
+dataset: ["data/slimpajama_jsonl/train-*.jsonl"]
+dataset_format: pretrain
+template: default
+output_dir: output/llama3.2-1b-cpt
+finetuning_type: full
+
+per_device_train_batch_size: 16
+gradient_accumulation_steps: 4
+learning_rate: 1.0e-5
+lr_scheduler_type: cosine
+warmup_ratio: 0.01
+weight_decay: 0.1
+num_train_epochs: 1
+max_source_length: 1024
+packing: true
+bf16: true
+gradient_checkpointing: true
+logging_steps: 20
+save_steps: 1000
+report_to: tensorboard
+
