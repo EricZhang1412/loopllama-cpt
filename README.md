@@ -1,3 +1,6 @@
+## Before Running:
+Please check that there is a link to the model path (`models/{YOUR_MODEL_NAME}/{FILES}`)
+
 ## Model Path:
 Please refer to [This Huggingface Repo](https://huggingface.co/ericzhang0328/loopllama-1B/tree/main) to get the current implementation of the looped Llama3.2-1B with KVMerge Technique.
 
