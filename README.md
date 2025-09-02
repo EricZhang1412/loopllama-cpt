@@ -25,4 +25,29 @@ Please refer to [This Huggingface Repo](https://huggingface.co/ericzhang0328/loo
 ## Script:
 
 1. `deepspeed_cpt.sh`
+```shell
+deepspeed --num_gpus=8 --module llamafactory.launcher \
+  --stage pt \
+  --model_name_or_path models/llama3_2-1B \
+  --dataset_dir data \
+  --dataset slimpajama_train_6B \
+  --output_dir output/llama3.2-1b-cpt-ds \
+  --finetuning_type full \
+  --do_train \
+  --max_steps 30720 \
+  --per_device_train_batch_size 16 \
+  --gradient_accumulation_steps 4 \
+  --learning_rate 1.0e-5 \
+  --lr_scheduler_type cosine \
+  --warmup_ratio 0.01 \
+  --weight_decay 0.1 \
+  --packing true \
+  --cutoff_len 1024 \
+  --max_samples 50000 \
+  --bf16 true \
+  --gradient_checkpointing true \
+  --logging_steps 1 \
+  --save_steps 1000 \
+  --report_to tensorboard
+```
 2. `deepspeed_cpt_loopllama.sh`
