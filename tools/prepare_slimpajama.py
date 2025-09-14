@@ -8,7 +8,7 @@ SPLITS = {"train": "train", "valid": "validation"}
 os.makedirs(OUT_DIR, exist_ok=True)
 
 def dump(split_name, hf_split, shard_size=200_000):
-    ds = load_dataset("/projects/llama-cpt/data/SlimPajama-6B/", split=hf_split, streaming=True)
+    ds = load_dataset("/9950backfile/zjy_2/loopllama_cpt/loopllama-cpt/data/Slimpajama-6B", split=hf_split, streaming=True)
     n, shard_idx = 0, 0
     fw = open(os.path.join(OUT_DIR, f"{split_name}-{shard_idx:03d}.jsonl"), "w", encoding="utf-8")
     for ex in ds:

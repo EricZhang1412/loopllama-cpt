@@ -1,10 +1,10 @@
 deepspeed --num_gpus=8 --module llamafactory.launcher \
   --stage pt \
-  --model_name_or_path /projects/llama-cpt/models/loopllama \
+  --model_name_or_path /9950backfile/zjy_2/loopllama_cpt/loopllama-cpt/models/loopllama_origin \
   --trust_remote_code True \
   --dataset_dir data \
   --dataset slimpajama_train_6B \
-  --output_dir output/loopllama3.2-1b-cpt-ds \
+  --output_dir output/loopllama3.2-1b-deepspeed-0904 \
   --finetuning_type full \
   --do_train \
   --max_steps 30720 \

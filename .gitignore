@@ -1,0 +1,32 @@
+# Python bytecode files
+*.pyc
+__pycache__/
+
+# Virtual environments
+venv/
+env/
+
+# Data and model directories
+data/
+models/
+
+# Checkpoints and outputs
+output/*
+
+# Logs and training results
+*.log
+trainer_log.jsonl
+train_results.json
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# Temporary files
+*~
+*.bak
+*.swp
+*.swo
+.ipynb_checkpoints/
+
